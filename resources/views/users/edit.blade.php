@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layouts.app')
 
 @section('content')
 
@@ -7,6 +7,7 @@
         <div class="pull-left">
             <h2>Edit New User</h2>
         </div>
+        <br>
         <div class="pull-right">
             <a href="{{ route('users.index' ) }}" class="btn btn-primary">Back</a>
         </div>
@@ -24,6 +25,7 @@
     </div>
 @endif
 
+<br>
 {!! Form::model($user, ['method' => 'PATCH', 'route' => ['users.update', $user->id]]) !!} 
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">

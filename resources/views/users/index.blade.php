@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layouts.app')
 
 @section('content')
 <div class="row">
@@ -6,6 +6,7 @@
         <div class="pull-left">
             <h2>Users Management</h2>
         </div>
+        <br>
         <div class="pull-right">
             <a class="btn btn-success" href="{{ route('users.create') }}">Create New User</a>
         </div>
@@ -18,6 +19,7 @@
 </div>
 @endif
 
+<br>
 <table class="table table-bordered">
     <tr>
         <th>No</th>

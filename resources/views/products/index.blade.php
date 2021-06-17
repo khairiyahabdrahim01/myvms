@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layouts.app')
 
 @section('content')
 
@@ -7,6 +7,7 @@
         <div class="pull-left">
             <h2>Products</h2>
         </div>
+        <br>
         <div class="pull-right">
         @can('product-create')
             <a class="btn btn-success" href="{{ route('products.create') }}">Create New Product</a>
@@ -21,6 +22,7 @@
 </div>
 @endif
 
+<br>
 <table class="table table-bordered">
     <tr>
         <th>No</th>

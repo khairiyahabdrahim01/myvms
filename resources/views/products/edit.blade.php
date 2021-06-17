@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layouts.app')
 
 @section('content')
 
@@ -7,6 +7,7 @@
         <div class="pull-left">
             <h2>Edit Product</h2>
         </div>
+        <br>
         <div class="pull-right">
             <a href="{{ route('products.index' ) }}" class="btn btn-primary">Back</a>
         </div>
@@ -24,6 +25,7 @@
     </div>
 @endif
 
+<br>
 <form action="{{ route('products.update', $product->id) }}" method="post">
 @csrf 
 @method('PUT')
