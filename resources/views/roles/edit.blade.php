@@ -1,37 +1,37 @@
 @extends('layouts.app')
 
-@section('content')
 
+@section('content')
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
             <h2>Edit Role</h2>
         </div>
-        <br>
         <div class="pull-right">
-            <a href="{{ route('roles.index' ) }}" class="btn btn-primary">Back</a>
+            <a class="btn btn-primary" href="{{ route('roles.index') }}"> Back</a>
         </div>
     </div>
 </div>
 
-@if(count($errors) > 0)
+
+@if (count($errors) > 0)
     <div class="alert alert-danger">
-        <strong>Whoops!</strong>There were some problems with your input. <br><br>
+        <strong>Whoops!</strong> There were some problems with your input.<br><br>
         <ul>
-            @foreach ($errors->all() as $error)
+        @foreach ($errors->all() as $error)
             <li>{{ $error }}</li>
-            @endforeach
+        @endforeach
         </ul>
     </div>
 @endif
 
-<br>
-{!! Form::model($role, ['method' => 'PATCH', 'route' => ['roles.update', $role->id]]) !!} 
+
+{!! Form::model($role, ['method' => 'PATCH','route' => ['roles.update', $role->id]]) !!}
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Name:</strong>
-            {!! Form::text('name', null, array('placeholder' => 'Name', 'class' => 'form-control')) !!}
+            {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
@@ -42,15 +42,15 @@
                 <label>{{ Form::checkbox('permission[]', $value->id, in_array($value->id, $rolePermissions) ? true : false, array('class' => 'name')) }}
                 {{ $value->name }}</label>
             <br/>
-            @endforeach            
+            @endforeach
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
         <button type="submit" class="btn btn-primary">Submit</button>
     </div>
 </div>
-{!! Form::close() !!} 
+{!! Form::close() !!}
 
-<p class="text-center text-primary"><small>Visitor Management System</small></p>
 
 @endsection
+<p class="text-center text-primary"><small>Tutorial</small></p>

@@ -1,17 +1,18 @@
 @extends('layouts.app')
 
-@section('content')
 
+@section('content')
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Show User</h2>
+            <h2> Show User</h2>
         </div>
         <div class="pull-right">
-            <a href="{{ route('users.index' ) }}" class="btn btn-primary">Back</a>
+            <a class="btn btn-primary" href="{{ route('users.index') }}"> Back</a>
         </div>
     </div>
 </div>
+
 
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
@@ -28,10 +29,10 @@
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>ROles:</strong>
+            <strong>Roles:</strong>
             @if(!empty($user->getRoleNames()))
-                @foreach($user->getRolesNames() as $v)
-                    <label for="names" class="badge badge-success">{{ $v }}</label>
+                @foreach($user->getRoleNames() as $v)
+                    <label class="badge badge-success">{{ $v }}</label>
                 @endforeach
             @endif
         </div>
